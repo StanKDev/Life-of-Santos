@@ -25,7 +25,7 @@ TEXT HERE<br/><br/>
 
     player createDiaryRecord ["credits",
         [
-            "AsYetUntitled",
+            "Life Of Santos",
                 "
 AsYetUntitled (formerly ArmaLife) is a GitHub project which aims to update and keep adding new features to the original 'Altis Life RPG' by Tonic.<br/><br/>
                 "
