@@ -19,12 +19,12 @@ diag_log "--------------------------------- Starting Altis Life Client Init ----
 diag_log "------------------------------------------ Version 5.0.0 -------------------------------------------";
 diag_log "----------------------------------------------------------------------------------------------------";
 waitUntil {!isNull player && player == player}; //Wait till the player is ready
-[] call compile preprocessFileLineNumbers "core\clientValidator.sqf";
+[] call compile preprocessFileLineNumbers "SQF\core\clientValidator.sqf";
 enableSentences false;
 
 //Setup initial client core functions
 diag_log "::Life Client:: Initialization Variables";
-[] call compile preprocessFileLineNumbers "core\configuration.sqf";
+[] call compile preprocessFileLineNumbers "SQF\core\configuration.sqf";
 
 diag_log "::Life Client:: Variables initialized";
 diag_log "::Life Client:: Setting up Eventhandlers";
@@ -96,7 +96,7 @@ player setVariable ["transporting",false,true];
 player setVariable ["playerSurrender",false,true];
 
 diag_log "Past Settings Init";
-[] execFSM "core\fsm\client.fsm";
+[] execFSM "SQF\core\fsm\client.fsm";
 
 diag_log "Executing client.fsm";
 waitUntil {!(isNull (findDisplay 46))};
@@ -139,7 +139,7 @@ CONSTVAR(life_paycheck); //Make the paycheck static.
 if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 0) then {player enableFatigue false;};
 
 if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then {
-    [] execVM "core\fn_setupStationService.sqf";
+    [] execVM "SQF\core\fn_setupStationService.sqf";
 };
 
 /*
